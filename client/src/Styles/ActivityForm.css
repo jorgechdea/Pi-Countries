@@ -1,0 +1,84 @@
+.bg{
+    position: absolute;
+    margin: 0;
+    background-color: rgb(49, 49, 49);
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    background-image: url("../Assets/maps2.jpg"); 
+    background-size: cover; 
+    background-position: center;
+    background-attachment:fixed;
+}
+
+.create{
+    background-color: hsla(261, 18%, 19%, 0.644);
+    border-radius: 15px;
+    width: 80%;
+    height: 90%;
+    position: relative;
+    backdrop-filter: blur(3px);
+    padding: 20px;    
+    color: white;
+}
+
+.buttonToHome{
+    align-items: center;
+    width: 40%;
+    border-radius: 15px;
+    cursor: pointer;
+    color: white;
+    border: 4px solid rgb(21, 21, 21) ;
+    font-size: 20px;
+    margin: 5px;
+    padding: 3px;
+    background-color: rgb(40,40,40);
+}
+
+
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.btncreate {
+    align-items: center;
+    width: 80px;
+    border-radius: 15px;
+    cursor: pointer;
+    color: white;
+    border: 4px solid rgb(21, 21, 21) ;
+    font-size: 20px;
+    margin: 5px;
+    padding: 3px;
+    background-color: rgb(40,40,40);
+}
+
+.errors{
+    display: flex;
+    justify-content: flex-end;
+    width: 60%;
+    height: 25px;
+    left: 50%;
+    right: 50%;
+    color:#ff0000; 
+    font-size: large;  
+}
+.c{
+    display: flex;
+    justify-content: center;
+    margin-left: 5px;
+}
+
+.delete{
+    margin-left: 8px;
+}
+
+.inputCreate{
+    margin: 3%;
+    font-size: large;
+
+}
