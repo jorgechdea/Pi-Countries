@@ -12,6 +12,7 @@ const { DataTypes } = require('sequelize');
 module.exports = (sequelize) => {
   // defino el modelo
   sequelize.define('activities', {
+    
     name: {
       type: DataTypes.TEXT,
       allowNull: false,
@@ -23,12 +24,14 @@ module.exports = (sequelize) => {
     },
     duration: {
         type: DataTypes.INTEGER,
+        allowNull: false,
        
     },
     season: {
         type: DataTypes.ENUM('Spring', 'Summer', 'Autumn', 'Winter'),
         allowNull: false,
     },
+  
       
   });
 };

@@ -57,7 +57,6 @@ router.get("/countries", async (req, res) => {
      } 
      });
     
-
     try{
             if (name) {
             let country = await allCountries.filter(
@@ -132,7 +131,7 @@ router.post("/activity", async (req, res) => {
               name: countries,
            }
         });
-        console.log(findCountry)
+        
   
         await createActivity.setCountries(findCountry);
         return res.status(200).json(createActivity)
@@ -145,19 +144,16 @@ router.post("/activity", async (req, res) => {
 
   router.delete("/activities/:id", async (req, res) => {
     const { id } = req.params;
-
-    try{
-       if(!id) {
-        return res.status(400).json('Id not found') 
-    }
-    let eliminated = await Activities.destroy({
-        where: {id}
+    
+    try{   
+    await Activities.destroy({
+        where: {id: id}
     });
-    return res.status(200).json('Activity delete')
+    return res.status(200).json('Activity delete') 
+    } catch (error){
+       return res.status(400).json(error)
+    }   
+})
 
-} catch (error){
-    console.log(error)
-};     
-});
 
 module.exports = router;
