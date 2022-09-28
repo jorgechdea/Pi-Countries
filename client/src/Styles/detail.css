@@ -50,7 +50,7 @@ padding: 2%;
         align-content: space-evenly;
         backdrop-filter: blur(2px);
         background-color: rgba(139, 139, 139, 0.24);
-        
+        margin-bottom: 2%;
       }
 
       .info1 {
@@ -60,6 +60,7 @@ padding: 2%;
         justify-content: space-around;
         align-items: center;
         border: dotted rgba(234, 234, 234, 0.025);
+        padding-bottom: 2%;
       }
 
       .info2 {
@@ -67,9 +68,10 @@ padding: 2%;
         display:flex;
         flex-wrap: wrap;
         justify-content: space-around;
-        align-items: center;
+        align-items: flex-start;
         border-right: dotted rgba(234, 234, 234, 0.02);
         border-bottom: dotted rgba(234, 234, 234, 0.02);
+        padding-bottom: 2%;
       }
 
       .activityCards{
@@ -107,7 +109,7 @@ padding: 2%;
       .tittle2{
         font-size: 1.8em;
         text-decoration: underline;
-        color: rgb(1, 0, 86);
+        color: rgb(60, 172, 223);
       }
 
     

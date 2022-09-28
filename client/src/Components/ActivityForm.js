@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link,  useHistory } from "react-router-dom";
-import { postActivity, getActivities, getCountries } from "../Actions";
+import { postActivity,  getCountries } from "../Actions";
 import { useDispatch, useSelector } from "react-redux";
 import "../Styles/ActivityForm.css";
 
@@ -62,6 +62,7 @@ export default function ActivityCreate(){
             ...input,
             countries: [...input.countries, e.target.value,]
         }));
+
         setErrors(
             validate({
                 ...input,
@@ -102,16 +103,16 @@ export default function ActivityCreate(){
         <div className="bg">
         <div className="create">
             <Link to="/home">
-                <button className="buttonToHome">Home</button>
+                <button className="buttonToHome">Back Home</button>
             </Link>
-            <h1>Add new Activity</h1>
+            <h1>Add Activity</h1>
             <div className="form">
                 <form onSubmit={(e) => handleSubmit(e)}>
 
-                    <div>
+                    <div className="inputCreate">
                         <span>Name:   </span>
                         <input
-                            className="inputCreate"
+                            className="input"
                             placeholder="Name..."
                             type="text"
                             value={input.name}
@@ -121,7 +122,7 @@ export default function ActivityCreate(){
                         {errors.name && <p className="errors">{errors.name}</p>}  
                     </div>
 
-                    <div>
+                    
                         {/* <input
                             className="inputCreate"
                             placeholder="Difficulty..."
@@ -132,7 +133,7 @@ export default function ActivityCreate(){
                         />
                         {errors.difficulty && <p>{errors.difficulty}</p>}   */}
 
-                        <div className="difficulty">
+                        <div className="inputCreate">
                             <label>Difficulty:    </label>
                             <label><input
                             type="radio"
@@ -179,12 +180,12 @@ export default function ActivityCreate(){
                             />5
                             </label>
                         </div>
-                    </div>
+                    
 
                     <div className="inputCreate">
                         <span>Duration:   </span>
                         <input
-                            className="inputCreate"
+                            className="input"
                             placeholder="Duration..."
                             type="integer"
                             value={input.duration}
@@ -207,8 +208,8 @@ export default function ActivityCreate(){
                     </div> */}
 
                     <div className="inputCreate">
-                        <span>Season:   </span>
-                        <select name="season" id="season" onChange={(e) => handleChange(e)}>
+                        <span>Season:</span>
+                        <select className="input" name="season" id="season" onChange={(e) => handleChange(e)}>
                             <option value="empty"> </option>
                             <option value="Winter" key="Winter">Winter</option>
                             <option value="Autumn" key="Autumn">Autumn</option>
@@ -218,7 +219,7 @@ export default function ActivityCreate(){
                         {errors.season && <p className="errors">{errors.season}</p>}  
                     </div>
 
-                    <div className="inputCreate">
+                    <div className="inputCreate2">
                         <span>Countries:   </span>
                         <select onChange={(e) => handleSelectCountry(e)}>
                             {countries.map((c) => (
@@ -227,6 +228,7 @@ export default function ActivityCreate(){
                             </option>
                             ))}
                         </select>
+                        <div className="countryCreate">
                         {input.countries.map((c, i) => (
                             <ul className="c" key={i}>
                                 <li>{c}   </li>
@@ -235,8 +237,9 @@ export default function ActivityCreate(){
                         ))}
                         {errors.countries && <p className="errors">{errors.countries}</p>}
                     </div>
+                    </div>
                     <button type="submit" className="btncreate">
-                        Add
+                        Create
                     </button>
                 </form>
             </div>

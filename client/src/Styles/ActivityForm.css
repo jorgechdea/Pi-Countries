@@ -1,9 +1,8 @@
 .bg{
-    position: absolute;
-    margin: 0;
-    background-color: rgb(49, 49, 49);
-    width: 100%;
-    height: 100%;
+    
+   
+    padding: 10% 1% 14% 1%;
+    
     align-items: center;
     display: flex;
     justify-content: center;
@@ -14,7 +13,7 @@
 }
 
 .create{
-    background-color: hsla(261, 18%, 19%, 0.644);
+    background-color: hsla(264, 5%, 21%, 0.644);
     border-radius: 15px;
     width: 80%;
     height: 90%;
@@ -22,6 +21,7 @@
     backdrop-filter: blur(3px);
     padding: 20px;    
     color: white;
+    margin: 4%;
 }
 
 .buttonToHome{
@@ -75,10 +75,34 @@
 
 .delete{
     margin-left: 8px;
+    border-radius: 5px;
 }
 
 .inputCreate{
     margin: 3%;
     font-size: large;
+   
+}
 
+.inputCreate2{
+    margin: 2%;
+    font-size: large;
+
+}
+
+.input{
+    font-size: large;
+    width: 150px;
+    height: 20px;
+    margin-left: 5px;
+}
+
+.countryCreate{
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    font-size: medium;
+    justify-items: left;
+    margin: 3%;
+    backdrop-filter: blur(3px);
+    border-radius: 15px;
 }

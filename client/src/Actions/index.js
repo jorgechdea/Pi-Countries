@@ -11,7 +11,7 @@ export const POST_ACTIVITIES = "POST_ACTIVITIES";
 export const GET_DETAIL = "GET_DETAIL"
 export const DELETE_ACTIVITY = "DELETE_ACTIVITY";
 
-const PATH = "/activities/";
+
 
 export function getCountries() {
     return async function (dispatch) {
@@ -111,12 +111,14 @@ export function postActivity(payload) {
 
 export function deleteActivity(id) {
   return async function (dispatch) {
-    
-      const activity = await axios.delete(`${PATH}${id}`, id)
+     try{
+      const activity = await axios.delete(`http://localhost:3001/activities/${id}`)
       return dispatch({
         type: DELETE_ACTIVITY,
         payload: activity,
       });
-    
+     } catch (error){
+      alert(error)
+     }
   };
 };
