@@ -26,12 +26,9 @@ export default function Home(){
     
     const [ currentPage, setCurrentPage ] = useState(1);
     const [ countriesPerPage, setCountriesPerPage ] = useState(10);
-    if (!currentPage) currentPage = 1;
+   
     const indexLastCountry = currentPage * countriesPerPage;
     const indexFirstCountry = indexLastCountry - countriesPerPage;
-    
-    console.log("currentPage"+currentPage)
-    
     const currentCountries = allCountries.slice(
         indexFirstCountry,
         indexLastCountry
@@ -46,7 +43,8 @@ export default function Home(){
     const [ orderPopulation, setOrderPopulation ] = useState("");
 
     useEffect( () => {
-        dispatch( getCountries())
+        if (!allCountries.length) {
+        dispatch( getCountries())}
     }, [ dispatch ]);
 
     useEffect( () => {

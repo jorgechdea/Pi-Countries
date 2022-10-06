@@ -117,6 +117,7 @@ function rootReducer ( state = initialState, action ){
             ? state.allCountries : state.countries.filter((c) => {
                     const activities = c.activities.map((a) => a.name)
                     return activities.includes(action.payload)
+
                     });
             return {
                 ...state,

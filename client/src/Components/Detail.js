@@ -111,6 +111,8 @@ export default function Detail(props) {
                                     <p>Difficulty: {a.difficulty}</p>
                                     <p>Duration: {a.duration} hours</p>
                                     <p>Season: {a.season}</p>
+                                    <p> Number of Likes: {a.like}</p>
+                                    {console.log(a)}
                                     
                                 </div>    
                             )

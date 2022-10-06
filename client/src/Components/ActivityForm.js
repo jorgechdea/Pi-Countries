@@ -46,6 +46,7 @@ export default function ActivityCreate(){
         duration: 0,
         season: "",
         countries: [],
+        like: 0,
     });
 
     function handleChange(e) {
@@ -218,6 +219,22 @@ export default function ActivityCreate(){
                         </select>
                         {errors.season && <p className="errors">{errors.season}</p>}  
                     </div>
+
+                    <div className="inputCreate">
+                        <span>Like:   </span>
+                        <input
+                            className="input"
+                            placeholder="Like..."
+                            type="integer"
+                            value={input.like}
+                            name="like"
+                            onChange={(e) => handleChange(e)}
+                        /> 
+                     
+                    </div>
+
+
+
 
                     <div className="inputCreate2">
                         <span>Countries:   </span>
